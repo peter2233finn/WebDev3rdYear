@@ -1,0 +1,188 @@
+body {
+  margin: 0;
+  background-color: #000099;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+  background-color: #000066;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#navbar a:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+.map{
+    position: absolute;
+    top: 1000px;
+    left: 50px;
+    padding: 250px;
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.background {
+	background: linear-gradient(to bottom, #0033cc 0%, #0099ff 100%);
+    height: 120%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background1 {
+	background: linear-gradient(to bottom, #0033cc 0%, #0099ff 100%);
+    height: 160%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	background: red;
+    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+}
+
+
+
+.left1{
+    float: left;
+    width: 250px;
+    padding: 10px;
+	color: white;
+}
+.left2{
+    float: left;
+    width: 250px;
+    padding: 10px;
+	color: white;
+}
+.left3{
+    float: left;
+    width: 250px;
+    padding: 10px;
+	color: white;
+}
+.left4{
+    float: left;
+    width: 250px;
+    padding: 10px;
+	color: white;
+}
+.left5{
+    float: left;
+    width: 250px;
+    padding: 10px;
+	color: white;
+}
+
+
+.button {
+    background-color: #000099;
+    color: white;
+	border: none;
+	border-radius: 12px;
+	width: 150px;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #000000;
+    color: white;
+}
+.button1 {
+    background-color: #000099;
+    color: white;
+	border: none;
+	border-radius: 12px;
+	width: 150px;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button1:hover {
+    background-color: #000000;
+    color: white;
+}
+.button2 {
+    background-color: #000099;
+    color: white;
+	border: none;
+	border-radius: 12px;
+	width: 150px;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button2:hover {
+    background-color: #000000;
+    color: white;
+}
+.button3 {
+    background-color: #000099;
+    color: white;
+	border: none;
+	border-radius: 12px;
+	width: 150px;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button3:hover {
+    background-color: #000000;
+    color: white;
+}
+.button4 {
+    background-color: #000099;
+    color: white;
+	border: none;
+	border-radius: 12px;
+	width: 150px;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button4:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.footer {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 80px;
+   padding: 10px;
+   background-color: black;
+   color: white;
+   text-align: left;
+}
