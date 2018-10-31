@@ -6,7 +6,7 @@ body {
 
 #navbar {
   background-color: #000066;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   display: block;
@@ -29,8 +29,8 @@ body {
 }
 
 .map{
-    position: absolute;
-    top: 1000px;
+    position: relative;
+    top: 100px;
     left: 50px;
     padding: 250px;
 }
@@ -40,9 +40,11 @@ body, html {
     height: 100%;
     margin: 0;
 }
+
+
 .background {
 	background: linear-gradient(to bottom, #0033cc 0%, #0099ff 100%);
-    height: 120%; 
+    height: 160%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -60,7 +62,6 @@ body, html {
     background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
     background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
 }
-
 
 
 .left1{
@@ -93,7 +94,6 @@ body, html {
     padding: 10px;
 	color: white;
 }
-
 
 .button {
     background-color: #000099;
@@ -177,7 +177,7 @@ body, html {
 }
 
 .footer {
-   position: absolute;
+   position: relative;
    bottom: 0;
    width: 100%;
    height: 80px;
