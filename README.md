@@ -2,7 +2,11 @@
 Web development group project 3rd year
 sql.sql contains the SQL server database and creation
 
+To use:
 
+1. Put the sql.sql file into a mysql database
+2. Clone the rest and put onto a http server
+3. Enable php and the file option in php
 
 Installation:
 
