@@ -15,7 +15,7 @@ $result = $conn->query("SELECT Username FROM USER where Username = '$uname' and 
 if ($result->num_rows == 0)
 {
         session_start();
-	$_SESSION['error_message'] = "Login failed. Try again.";
+	$_SESSION['error_message'] = "Login failed. Try again.";log.php
 	header("Location: login.php");
         die();
 }
@@ -43,4 +43,3 @@ function debug_to_console( $data ) {
 
 </body>
 </html>
-
