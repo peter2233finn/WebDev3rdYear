@@ -3,23 +3,23 @@
 <html>
 <link rel="stylesheet" type="text/css" href="CSS.css">
 
+<h1>
+<?php
+include 'header.php';
+?>
+</h1>
+
 <head>
 	<title>Luminous</title>
 </head>
-<body id="bodyId">
-
-	<div id="navbar">
-	<a href="index.html">Home</a>
-	<a href="kidsclub.html">Kids Club</a>
-        <a href="login.html">Book ahead</a>
-	</div>
-	<div class = "background">
-
 <br>
-<br>
-<br>
-<br>
-<br>
+<center><h1>
+<?php
+session_start();
+echo $_SESSION['error_message'];
+unset($_SESSION['error_message']);
+?>
+</h1></center>
 
 <?php
 $conn = mysqli_connect("localhost","bobbie","pug","webdev");
