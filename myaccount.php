@@ -21,6 +21,9 @@
 <br>
 <?php
 include 'header.php';
+session_start();
+echo $_SESSION['error_message'];
+unset($_SESSION['error_message']);
 
 if (!isset($_COOKIE['user_logged']))
 {
@@ -35,15 +38,15 @@ $result = $conn->query('SELECT Userid, Firstname, Lastname, Email, Address, User
 $toprint = "";
 while($row = $result->fetch_assoc())
 {
-	$toprint .=  '<table style="width:80%"><form action="reg.php" method="post" style="width:100%; text-align:center">';
+	$toprint .=  '<table style="width:80%"><form action="update.php" method="post" style="width:100%; text-align:center">';
 	$toprint .=  '<div class="container"><tr><th><label for="fname"><b>Firstname</b></label></th><th><input type="text" value="' . $row['Firstname'] . '" placeholder="Enter firstname" name="fname" required></th>';
 	$toprint .=  '</tr><br><br><tr><th><label for="lname"><b>Lastname</b></label></th><th><input type="text" value="' . $row['Lastname'] . '" placeholder="Enter lastname" name="lname" required></th>';
 	$toprint .=  '</tr><br><br><tr><th><label for="email"><b>Email Address</b></label></th><th><input type="text"  value="' . $row['Email'] . '" placeholder="Enter email" name="email" required></th>';
 	$toprint .=  '</tr><br><br><tr><th><label for="uname"><b>Username</b></label></th><th><input type="text"  value="' . $row['Username'] . '"placeholder="Enter Username" name="uname" required></th>';
-	$toprint .=  '</tr><br><br><tr><th><label for="addss"><b>Address</b></label></th><th><input type="text"  value="' . $row['Address'] . '" placeholder="Address" name="addss" required></th>';
-	$toprint .=  '</tr><tr><th><label for="pass1"><b>Password</b></label></th><th><input type="password" placeholder="New password" name="pass1" required></th>';
-	$toprint .=  '</tr><br><br><tr><th><label for="pass2"><b>Confirm Password</b></label></th><th><input type="password" placeholder="Confirm password" name="pass2" required></th>';
-	$toprint .=  '</tr><br><br></table><button href="register.php" class="button" type="submit">Update</button><br><br></div><br><br></form>';
+	$toprint .=  '</tr><br><br><tr><th><label for="addss"><b>Address</b></label></th><th><input type="text"  value="' . $row['Address'] . '" placeholder="Address" name="addss"></th>';
+	$toprint .=  '</tr><tr><th><label for="pass1"><b>Password</b></label></th><th><input type="password" placeholder="New password" name="pass1"></th>';
+	$toprint .=  '</tr><br><br><tr><th><label for="pass2"><b>Confirm Password</b></label></th><th><input type="password" placeholder="Confirm password" name="pass2"></th>';
+	$toprint .=  '</tr><br><br></table><button href="myaccount.php" class="button" type="submit">Update</button><br><br></div><br><br></form>';
 
 }
 echo $toprint;
