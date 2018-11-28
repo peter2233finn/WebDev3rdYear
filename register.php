@@ -4,12 +4,6 @@
 <body background="linear-gradient(to bottom, #0033cc 0%, #0099ff 100%)">
 <link rel="stylesheet" type="text/css" href="CSS.css">
 
- <div id="navbar">
-   <a href="index.html">Home</a>
-   <a href="kidsclub.html">Kids Club</a>
-   <a href="login.html">Book ahead</a>
- </div>
-
 <head>
 <title>Luminous</title>
 </head>
@@ -25,6 +19,7 @@
 <br>
 <br>
 <?php
+include 'header.php';
 session_start();
 echo $_SESSION['error_message'];
 unset($_SESSION['error_message']);
