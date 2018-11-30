@@ -5,7 +5,7 @@
 
 <h1>
 <?php
-include 'header.php';
+include './header.php';
 ?>
 </h1>
 
