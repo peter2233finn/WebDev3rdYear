@@ -2,14 +2,12 @@
 
 <html>
 <body background="linear-gradient(to bottom, #0033cc 0%, #0099ff 100%)">
+<?php
+include 'header.php';
+?>
+
+<body>
 <link rel="stylesheet" type="text/css" href="CSS.css">
-
- <div id="navbar">
-   <a href="index.html">Home</a>
-   <a href="kidsclub.html">Kids Club</a>
-   <a href="login.html">Book ahead</a>
- </div>
-
 <head>
 <title>Luminous</title>
 </head>
@@ -22,6 +20,7 @@
 
 <center>
 <h2>Login</h2>
+
 <p>
 <?php
 session_start();
@@ -53,7 +52,9 @@ unset($_SESSION['error_message']);
   </form>
  </center>
 </div>
-<div class="footer"><p>Contact us<br><br>Got a question?</p>
+<?php
+include 'footer.php'
+?>
 </body>
 
 </html>
