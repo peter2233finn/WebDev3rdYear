@@ -74,9 +74,5 @@ header("Location: index.php");
 die();
 ?>
 
-
-
-
-
 </body>
 </html>
