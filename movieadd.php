@@ -3,6 +3,8 @@
 
 <?php
 $mname = $_POST["mname"];
+$kids = $_POST["kids"];
+$price = $_POST["price"];
 $genre = $_POST["genre"];
 $Age = $_POST["age"];
 $Runtime = $_POST["runtime"];
@@ -28,10 +30,21 @@ $etime3 = $_POST["etime3"];
 $etime4 = $_POST["etime4"];
 $etime5 = $_POST["etime5"];
 
-$result = $conn->query("insert into MOVIES (Age,Runtime,Name,Genre,Photo,Discription) values('$Age','$Runtime','$mname','$genre','$photo','$discription');");
+if ($kids)
+{
+	$result = $conn->query("insert into MOVIES (Kids,Price,Age,Runtime,Name,Genre,Photo,Discription) values(true,'$Price','$Age','$Runtime','$mname','$genre','$photo','$discription');");
+}
+else
+{
+	$result = $conn->query("insert into MOVIES (Kids,Price,Age,Runtime,Name,Genre,Photo,Discription) values(false,'$Price','$Age','$Runtime','$mname','$genre','$photo','$discription');");
+}
 
+
+//This is the dictionary to upload the photo to. It is posted under photo
 $target_file = "movie_photos/" . basename($_FILES["photo"]["name"]);
 $uploadOk = 1;
+
+//this uploads the photo
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file);
 
@@ -62,10 +75,5 @@ header("Location: index.html");
 die();
 $conn->close();
 ?>
-
-
-
-
-
 </body>
 </html>
