@@ -3,12 +3,16 @@
 <html>
 <body background="linear-gradient(to bottom, #0033cc 0%, #0099ff 100%)">
 <link rel="stylesheet" type="text/css" href="CSS.css">
-
- <div id="navbar">
-   <a href="index.html">Home</a>
-   <a href="kidsclub.html">Kids Club</a>
-   <a href="login.html">Book ahead</a>
- </div>
+<?php
+include 'header.php';
+if (!isset($_COOKIE["Admin"]))
+{
+        session_start();
+        $_SESSION['error_message'] = "You do not have permission to view this page.";
+        header("Location: index.php");
+        die();
+}
+?>
 
 <head>
 <title>Luminous</title>
@@ -31,7 +35,7 @@ unset($_SESSION['error_message']);
 
 <table style="width:80%">
   <form enctype="multipart/form-data" action="movieadd.php" method="post" style="width:100%; text-align:center">
-   <div class="container">
+<div class="container">
 
    <tr>
      <th><label for="mname"><b>Movie Name</b></label></th>
@@ -66,6 +70,16 @@ unset($_SESSION['error_message']);
    <tr>
      <th><label for="runtime"><b>Movie run time</b></label></th>
      <th><input type="text" placeholder="Movie run time" name="runtime" required></th>
+   </tr>
+
+   <tr>
+     <th><label for="price"><b>Movie price</b></label></th>
+     <th><input type="text" placeholder="Movie price" name="price" required></th>
+   </tr>
+
+   <tr>
+     <th><label for="kids"><b>Part of kids club</b></label></th>
+     <th><input type="checkbox" name="kids" value="kids"></th>
    </tr>
     <br>
     <br>
@@ -132,28 +146,22 @@ unset($_SESSION['error_message']);
      <th><input type="text" placeholder="hh:mm" name="etime5"></th>
 </tr>
 
-
 </table>
-
 
      <div id="crap">
      <button href="movieadd.php" class="button" type="submit">Add Movie</button>
      </div>
      <br>
      <br>
-
     </div>
    <br>
    <br>
-
   </form>
-
-
-
-
  </center>
 </div>
-<div class="footer"><p>Contact us<br><br>Got a question?</p>
+<?php
+include 'footer.php'
+?>
 </body>
 
 </html>
