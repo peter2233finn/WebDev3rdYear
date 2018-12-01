@@ -9,6 +9,7 @@ $uname = $_POST["uname"];
 $addss = $_POST["addss"];
 $pass1 = $_POST["pass1"];
 $pass2 = $_POST["pass2"];
+$admin = $_POST["admin"];
 //checks if passwords are the same
 if (strcmp($pass1,$pass2) != 0)
 {
@@ -47,17 +48,21 @@ if (strlen($pass1) < 8)
 	header("Location: register.php");
 	die();
 }
-$result = $conn->query("insert into USER (Firstname,Lastname,Email,Address,Username,Password) values('$fname','$lname','$email','$addss','$uname','$pass1');");
+if ($admin == "123456")
+{
+	$result = $conn->query("insert into USER (Firstname,Lastname,Email,Address,Username,Password,Admin) values('$fname','$lname','$email','$addss','$uname','$pass1',1);");
+}
+else
+{
+	$result = $conn->query("insert into USER (Firstname,Lastname,Email,Address,Username,Password,Admin) values('$fname','$lname','$email','$addss','$uname','$pass1',0);");
+}
+
 $conn->close();
 session_start();
 $_SESSION['error_message'] = "Account created. Please login";
 header("Location: login.php");
 die();
 ?>
-
-
-
-
 
 </body>
 </html>
