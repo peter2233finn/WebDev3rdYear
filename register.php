@@ -2,7 +2,6 @@
 
 <html>
 <body background="linear-gradient(to bottom, #0033cc 0%, #0099ff 100%)">
-<link rel="stylesheet" type="text/css" href="CSS.css">
 
 <head>
 <title>Luminous</title>
@@ -78,6 +77,11 @@ unset($_SESSION['error_message']);
      <th><label for="pass2"><b>Confirm Password</b></label></th>
      <th><input type="password" placeholder="Confirm password" name="pass2" required></th>
    </tr>
+
+   <tr>
+     <th><label for="admin"><b>Admin password (where applicable)</b></label></th>
+     <th><input type="password" placeholder="Password" name="admin"></th>
+   </tr>
     <br>
     <br>
 </table>
@@ -93,9 +97,10 @@ unset($_SESSION['error_message']);
   </form>
  </center>
 </div>
-<div class="footer"><p>Contact us<br><br>Got a question?</p>
+<?php
+include 'footer.php'
+?>
 </body>
 
 </html>
-
 
