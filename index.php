@@ -2,11 +2,10 @@
 
 <html>
 <link rel="stylesheet" type="text/css" href="CSS.css">
-<body>
-<div style="background-color:#0066ff;">
+
 <h1>
 <?php
-include 'header.php';
+include './header.php';
 ?>
 </h1>
 
@@ -28,7 +27,7 @@ if ($conn->connect_error)
 {
         die("Connection failed: " . $conn->connect_error);
 }
-$result = $conn->query("SELECT MOVIEID, Age, Runtime, Name, Genre, Photo, Discription FROM MOVIES where kids = false");
+$result = $conn->query("SELECT MOVIEID, Age, Runtime, Name, Genre, Photo, Discription FROM MOVIES");
 
 $display = "<table>";
 $trClose = 0;
@@ -48,7 +47,7 @@ while($row = $result->fetch_assoc())
 			$trClose = 0;
 		}
 	}
-	$display .= "<td class=\"movielist\" height=\"1200\" style=\"vertical-align: top;\">";
+	$display .= "<td class=\"movielist\" height=\"1200\">";
 	$display .= "<div class = \"left1\">";
 	$display .= "<img style=\"width:80%;margin-top:90px\" src=\"" . $row["Photo"] . "\">";
 	$display .= "<p><b>" . $row["Name"] . " - Rating: " . $row["Age"];
@@ -60,7 +59,7 @@ while($row = $result->fetch_assoc())
 	$v=0;
 
 	//writing the movie times
-	$display .= "<table><tr><td>Weekdays</td><td>Weekends</td></tr><tr><td><br><br>";
+	$display .= "<table><tr><td>Weekdays</td><td>Weekends</td></tr><tr><td><br><br><br>";
 	while($r = $times->fetch_assoc())
 	{
 		if($v!=0)
@@ -87,13 +86,21 @@ while($row = $result->fetch_assoc())
 	$display .= "</td></tr></table></div></td>";
 	$i+=1;
 
+
+
 }
 $display .= "</table>";
 
 echo $display;
 $conn->close();
-include 'footer.php'
 ?>
+
+
+
+	</div>
+	<div class="footer"><p>Contact us<br><br>Got a question?</p>
+    </div>
+
 
 <script>
 function bookMovie(time,movieid,day)
@@ -103,7 +110,7 @@ function bookMovie(time,movieid,day)
 	document.getElementById("bookForm").submit();
 }
 </script>
-</div>
+
 </body>
 
 </html>
