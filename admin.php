@@ -146,17 +146,21 @@ unset($_SESSION['error_message']);
      <th><input type="text" placeholder="hh:mm" name="etime5"></th>
 </tr>
 
+
 </table>
+
 
      <div id="crap">
      <button href="movieadd.php" class="button" type="submit">Add Movie</button>
      </div>
      <br>
      <br>
+
     </div>
    <br>
    <br>
   </form>
+
  </center>
 </div>
 <?php
