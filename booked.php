@@ -64,14 +64,14 @@ if($result == 1)
 	while($row = $result2->fetch_assoc()) 
 	{
 		$moviename=$row["Name"];
-		$toprint .= '<h1>You have booked ' . $row["Name"] . '  for ' . $dayname . ' at ' . $time . "<br>";
+		$toprint .= '<h1>You have booked ' . $row["Name"] . '  for ' . $dayname . ' at ' . $time . "<br>Please pay at the desk, and you will be given your seat number(s).<br><br>";
 		$toprint .= '<img src="' . $row["Photo"] . '" alt="Italian Trulli">';
 	}
 
 	$result2 = $conn->query("select MAX(WATCHID) from MOVIESWATCHED where USERID = " . $userid);
 	while($row = $result2->fetch_assoc()) 
 	{
-		$toprint .= "<br> Your ticket number is: ". $row["MAX(WATCHID)"] . '</h1>';
+		$toprint .= "<br><br>Your ticket number is: ". $row["MAX(WATCHID)"] . '</h1>';
 	}
 	echo $toprint . "<br><br><br></center>";
 }
@@ -83,5 +83,12 @@ include 'footer.php';
 ?>
 
 
+
+
+
 </body>
 </html>
+
+
+
+
