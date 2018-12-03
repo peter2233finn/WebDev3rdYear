@@ -47,7 +47,7 @@ unset($_SESSION['error_message']);
 
 
      <a href="register.php" class="button">Register</a>
-     <a href="#" class="button">Forgot Password</a>
+     <a href="contact_us.php?forgot=true" class="button">Forgot Password</a>
     </div>
    <br>
    <br>
@@ -71,6 +71,12 @@ unset($_SESSION['error_message']);
  </center>
 </div>
 <?php
+function forgotPassword() {
+       session_start();
+        $_SESSION['error_message'] = "Please send us an email with your username and we will send you an email to confirm its you.";
+        header("Location: contact_us.php");
+        die();
+}
 include 'footer.php'
 ?>
 </body>
