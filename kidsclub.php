@@ -1,12 +1,13 @@
 <!doctype html>
 
 <html>
-<link rel="stylesheet" type="text/css" href="kidsstyle.css">
 
 <h1>
 <?php
-include 'header.php';
+include 'kidsheader.php';
 ?>
+<link rel="stylesheet" type="text/css" href="kidsstyle.css">
+
 </h1>
 
 <head>
