@@ -27,6 +27,8 @@ session_start();
 echo $_SESSION['error_message'];
 unset($_SESSION['error_message']);
 ?>
+<br>
+<br>
 </p>
   <form action="log.php" method="post" style="width:100%; text-align:center">
 
@@ -38,6 +40,7 @@ unset($_SESSION['error_message']);
      <label for="pass"><b>Password</b></label>
      <input type="password" placeholder="Enter Password" name="pass" required>
      <br>
+	<br>
      <button class="button" type="submit">Login</button>
      <br>
      <br>
@@ -48,7 +51,22 @@ unset($_SESSION['error_message']);
     </div>
    <br>
    <br>
+	<br>
+	<br>
+	<br>	
+	<img style="width:10%;length:10%;margin-top=100px" src="movie_photos/venom.jpg">
+	<img style="width:10%;length:10%;margin-top=100px" src="movie_photos/goosebumps.jpg">
+	<img style="width:10%;length:10%;margin-top=100px" src="movie_photos/halloween.jpg">
+	<img style="width:10%;length:10%;margin-top=100px" src="movie_photos/johnnyenglish.jpg">
+	<img style="width:10%;length:10%;margin-top=100px" src="movie_photos/robin.jpg">
 
+	<br>
+	<br>
+	<br>
+	<img style="width:10%;length:10%;margin-top=100px" src="movie_photos/simplefavour.jpg">
+	<img style="width:10%;length:10%;margin-top=100px" src="movie_photos/starisborn.jpg">
+	<img style="width:10%;length:10%;margin-top=100px" src="movie_photos/smallfoot.jpg">
+	<img style="width:10%;length:10%;margin-top=100px" src="movie_photos/hunter.jpg">
   </form>
  </center>
 </div>
