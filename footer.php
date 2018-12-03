@@ -1,4 +1,4 @@
 <?php
-$printmeee = '<div class="footer"><p>Contact us<br><br>Got a question?</p>';
+$printmeee = '<div class="footer"><p><a href="contact_us.php"><font color="white">Contact us</font></a>';
 echo $printmeee;
 ?>
