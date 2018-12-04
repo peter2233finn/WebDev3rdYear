@@ -10,6 +10,7 @@
 <h1><center>
 <?php
 include 'header.php';
+include 'SqlConnect.php';
 if(isset($_GET['forgot']))
 {
 	$pr .="<br><br>Please contact us with your email address so we can confirm its you. Thanks";
