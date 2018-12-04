@@ -4,6 +4,7 @@
 <body background="linear-gradient(to bottom, #0033cc 0%, #0099ff 100%)">
 <link rel="stylesheet" type="text/css" href="CSS.css">
 <?php
+//check if the logged in user has admin privelages
 include 'header.php';
 if (!isset($_COOKIE["Admin"]))
 {
@@ -27,6 +28,7 @@ if (!isset($_COOKIE["Admin"]))
 <center>
 <h2>Add movie
 <?php
+//display error message stored in the session varible error_message
 session_start();
 echo $_SESSION['error_message'];
 unset($_SESSION['error_message']);
@@ -159,7 +161,11 @@ unset($_SESSION['error_message']);
     </div>
    <br>
    <br>
+
   </form>
+
+
+
 
  </center>
 </div>
