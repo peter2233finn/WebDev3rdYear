@@ -6,13 +6,7 @@
 <?php
 //check if the logged in user has admin privelages
 include 'header.php';
-if (!isset($_COOKIE["Admin"]))
-{
-        session_start();
-        $_SESSION['error_message'] = "You do not have permission to view this page.";
-        header("Location: index.php");
-        die();
-}
+include 'isadmin.php';
 ?>
 
 <head>
