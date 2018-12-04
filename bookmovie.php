@@ -5,6 +5,7 @@
 <?php
 include 'header.php';
 include 'loggedin.php';
+include 'SqlConnect.php';
 ?>
 
 <div class = "background">
@@ -26,11 +27,7 @@ $day  = $_POST["daytype"];
 $time = $_POST["movietime"];
 $movieid = $_POST["movieid"];
 
-$conn = mysqli_connect("localhost","bobbie","pug","webdev");
-if ($conn->connect_error)
-{
-        die("Connection failed: " . $conn->connect_error);
-}
+//get movie details
 $result = $conn->query("SELECT MOVIEID, Age, Runtime, Name, Genre, Photo, Discription FROM MOVIES where MOVIEID = $movieid");
 
 $display = "<table>";
@@ -38,6 +35,7 @@ $trClose = 0;
 $i=0;
 $toprint = "";
 
+//display the details of the booked movie
 while($row = $result->fetch_assoc()) 
 {
 	$moviename=$row["Name"];
@@ -45,6 +43,7 @@ while($row = $result->fetch_assoc())
 	$toprint .= '<img src="' . $row["Photo"] . '" alt="Italian Trulli">';
 }
 
+//show 2 seperate dropdown menues for weekends and weekdays
 if ($day == 'weekend')
 {
 	$toprint .= '<br><br><div class="dropdown"><button class="dropbtn">Day</button><div class="dropdown-content">';
@@ -63,17 +62,18 @@ else
 	$toprint .= '</div></div>';
 }
 
+//print the string to screen
 echo $toprint;
 ?>
 <br>
 </div>
 <?php
 include 'footer.php'
+//the following script forms a form to submit the details of the movie to booked.php
 ?>
 <script>
 function bookMovie(time,userid,name,movieid,day)
 {
-	console.log(time);
 	var form = '<form id="bookForm" action="booked.php" method="post"><input type="text" name="time" value="'+time+'"><input type="text" name="movieid" value="'+movieid+'"><input type="text" name="moviename" value="'+name+'"><input type="text" name="userid" value="' + userid + '"><input type="text" name="day" value="'+day+'"></form>';
 	document.getElementById("bodyId").innerHTML=form;
 	document.getElementById("bookForm").submit();
