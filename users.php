@@ -33,7 +33,7 @@ unset($_SESSION['error_message']);
 <?php
 $result = $conn->query("SELECT USERID, Firstname, Lastname, Email, Address, Username, Admin  FROM USER;");
 
-$display = "<br><table  border=\"2\" bordercolor=\"black\">";
+$display = "<br><p1><table  border=\"2\" bordercolor=\"black\">";
 $trClose = 0;
 $i=0;
 $display .= "<form method=\"POST\" action=\"alteruser.php\"><tr><th>Edit</th><th>User ID</th><th>Firstname</th><th>Lastname</th><th>Email Address</th><th>Address</td><th>Username</th><th>Administrator</th></td>";
@@ -49,7 +49,7 @@ while($row = $result->fetch_assoc())
 		$display .= "<tr><td><input type=\"checkbox\" name=\"".$row["USERID"]."\" value=\"".$row["USERID"]."\"></td><td>".$row["USERID"]."</td><td>".$row["Firstname"]."</td><td>".$row["Lastname"]."</td><td>".$row["Email"]."</td><td>".$row["Address"]."</td><td>".$row["Username"]."</td><td>No</td></tr>";
 	}
 }
-$display .= "</table>";
+$display .= "</table></p1>";
 $display .= "<button value=\"Delete\" name=\"Delete\" class=\"button\" type=\"submit\">Delete</button>";
 $display .= "<button value=\"Movies\" name=\"Movies\" class=\"button\" type=\"submit\">Movies</button>";
 $display .= "</form>";

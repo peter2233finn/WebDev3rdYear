@@ -10,6 +10,7 @@ $userid = $_POST["userid"];
 $movieid = $_POST["movieid"];
 $moviename = $_POST["moviename"];
 
+
 //  find largest count for that particular booking and limit it to 4
 $result = $conn->query("select COUNT(WATCHID) from MOVIESWATCHED where USERID = '" . $userid . "' and MOVIEID = '".$movieid."' and TIME ='".$time."'");
 while($row = $result->fetch_assoc())
@@ -17,12 +18,27 @@ while($row = $result->fetch_assoc())
 	$tickets = $row["COUNT(WATCHID)"];
 }
 
-//do not book if they have booked more than 4
+
+//stop the user just refreshing the page to get more tickets
+if (isset($_COOKIE['refereshed']))
+{
+        setcookie('refereshed', null, -1, '/');
+        unset($_COOKIE["refereshed"]);
+        header("Location: index.php");
+        die();
+}
+else
+{
+	setcookie('refereshed',"Done", time() + (86400 * 30), "/");
+}
+
+
+//do not book if they have booked more than 5
 if($tickets > 4)
 {
         session_start();
-        $_SESSION['error_message'] = "You are limited to 4 tickets per screening";
-        header("Location: login.php");
+        $_SESSION['error_message'] = "You are limited to 5 tickets per screening";
+        header("Location: index.php");
         die();
 }
 
