@@ -1,13 +1,15 @@
 <!doctype html>
 
-<html>
+<link rel="stylesheet" type="text/css" href="kidsstyle.css">
 
+<html>
+<body>
+<div style="background-color:#ff6666;">
 <h1>
 <?php
 include 'kidsheader.php';
+include 'SqlConnect.php';
 ?>
-<link rel="stylesheet" type="text/css" href="kidsstyle.css">
-
 </h1>
 
 <head>
@@ -23,11 +25,6 @@ unset($_SESSION['error_message']);
 </h1></center>
 
 <?php
-$conn = mysqli_connect("localhost","bobbie","pug","webdev");
-if ($conn->connect_error)
-{
-        die("Connection failed: " . $conn->connect_error);
-}
 $result = $conn->query("SELECT MOVIEID, Age, Runtime, Name, Genre, Photo, Discription FROM MOVIES where kids = true");
 
 $display = "<table>";
@@ -48,7 +45,7 @@ while($row = $result->fetch_assoc())
 			$trClose = 0;
 		}
 	}
-	$display .= "<td class=\"movielist\" height=\"1200\">";
+	$display .= "<td class=\"movielist\" height=\"1200\" style=\"vertical-align: top;\">";
 	$display .= "<div class = \"left1\">";
 	$display .= "<img style=\"width:80%;margin-top:90px\" src=\"" . $row["Photo"] . "\">";
 	$display .= "<p><b>" . $row["Name"] . " - Rating: " . $row["Age"];
@@ -60,7 +57,7 @@ while($row = $result->fetch_assoc())
 	$v=0;
 
 	//writing the movie times
-	$display .= "<table><tr><td>Weekdays</td><td>Weekends</td></tr><tr><td><br><br><br>";
+	$display .= "<table><tr><td>Weekdays</td><td>Weekends</td></tr><tr><td><br><br>";
 	while($r = $times->fetch_assoc())
 	{
 		if($v!=0)
@@ -87,23 +84,13 @@ while($row = $result->fetch_assoc())
 	$display .= "</td></tr></table></div></td>";
 	$i+=1;
 
-
-
 }
 $display .= "</table>";
 
 echo $display;
 $conn->close();
-?>
-
-
-
-	</div>
-<?php
 include 'footer.php'
 ?>
-    </div>
-
 
 <script>
 function bookMovie(time,movieid,day)
@@ -113,7 +100,7 @@ function bookMovie(time,movieid,day)
 	document.getElementById("bookForm").submit();
 }
 </script>
-
+</div>
 </body>
 
 </html>

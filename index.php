@@ -7,6 +7,7 @@
 <h1>
 <?php
 include 'header.php';
+include 'SqlConnect.php';
 ?>
 </h1>
 
@@ -16,18 +17,18 @@ include 'header.php';
 <br>
 <center><h1>
 <?php
+
+
 session_start();
 echo $_SESSION['error_message'];
 unset($_SESSION['error_message']);
+setcookie('refereshed', null, -1, '/');
+unset($_COOKIE["refereshed"]);
+
 ?>
 </h1></center>
 
 <?php
-$conn = mysqli_connect("localhost","bobbie","pug","webdev");
-if ($conn->connect_error)
-{
-        die("Connection failed: " . $conn->connect_error);
-}
 $result = $conn->query("SELECT MOVIEID, Age, Runtime, Name, Genre, Photo, Discription FROM MOVIES where kids = false");
 
 $display = "<table>";

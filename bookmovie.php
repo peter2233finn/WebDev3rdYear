@@ -21,7 +21,6 @@ include 'SqlConnect.php';
 <br>
 <br>
 <br>
-<div id="gobble">GG</div>
 <?php
 $day  = $_POST["daytype"];
 $time = $_POST["movietime"];

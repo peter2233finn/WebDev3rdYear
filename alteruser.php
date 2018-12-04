@@ -30,7 +30,7 @@ if(isset($_POST["Movies"]))
 {
 
 //creates table
-	$toprint = "<p1><br><br><center>";
+	$toprint = "<p1><br><br><br><br><br><center>";
 	foreach ($_POST as $key => $value) 
 	{
 

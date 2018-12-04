@@ -2,15 +2,12 @@
 <body>
 
 <?php
+include 'SqlConnect.php';
 $uname = $_POST["uname"];
 $pass = $_POST["pass"];
 $conn = mysqli_connect("localhost","bobbie","pug","webdev");
 unset($_COOKIE["Admin"]);
 setcookie('Admin', null, -1, '/');
-if ($conn->connect_error)
-{
-	die("Connection failed: " . $conn->connect_error);
-}
 
 $result = $conn->query("SELECT Username, Userid, Admin FROM USER where Username = '$uname' and Password = '$pass'");
 if ($result->num_rows == 0)
