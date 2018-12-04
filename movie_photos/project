@@ -1,0 +1,53 @@
+1. register: name, contact details, username, password
+
+2. sign in: username and password
+
+3. get lists of movies
+
+4. search movies and times
+
+5. book movies: CCV needed
+
+
+
+footers: contact us.ect
+name of cinima
+navigation bar at top
+admin to add/remove movies
+
+
+
+
+
+SQL:
+account: 
+
+first name
+last name
+username
+password
+usertype	//admin or normal user
+credit card		
+contact details
+
+movies:
+
+
+
+
+
+
+
+
+TODO:
+DO:HOMEPAGE 
+
+design stylesheet
+html database
+
+
+start with navigation bar
+sign up
+start main page
+
+
