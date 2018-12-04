@@ -3,23 +3,21 @@
 
 <?php
 include 'header.php';
+include 'SqlConnect.php';
 $day = $_POST["day"];
 $time = $_POST["time"];
 $userid = $_POST["userid"];
 $movieid = $_POST["movieid"];
 $moviename = $_POST["moviename"];
 
-$conn = mysqli_connect("localhost","bobbie","pug","webdev");
-if ($conn->connect_error)
-{
-        die("Connection failed: " . $conn->connect_error);
-}
-
+//  find largest count for that particular booking and limit it to 4
 $result = $conn->query("select COUNT(WATCHID) from MOVIESWATCHED where USERID = '" . $userid . "' and MOVIEID = '".$movieid."' and TIME ='".$time."'");
 while($row = $result->fetch_assoc())
 {
 	$tickets = $row["COUNT(WATCHID)"];
 }
+
+//do not book if they have booked more than 4
 if($tickets > 4)
 {
         session_start();
@@ -28,6 +26,7 @@ if($tickets > 4)
         die();
 }
 
+//make ticket and display ticket number
 $result = $conn->query("insert into MOVIESWATCHED (Time, Name,Day,USERID,MOVIEID) values('$time','$moviename','$day','$userid','$movieid');");
 switch ($day){
 	case 1:
@@ -53,7 +52,7 @@ switch ($day){
 		break;
 }
 
-
+//
 if($result == 1)
 {
 	$result2 = $conn->query("SELECT MOVIEID, Age, Runtime, Name, Genre, Photo, Discription FROM MOVIES where MOVIEID = $movieid");
